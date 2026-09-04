@@ -1,0 +1,122 @@
+{'site': 1, 'rows': 46966}
+{'site': 2, 'rows': 62722}
+{'site': 3, 'rows': 62254}
+{'site': 4, 'rows': 77476}
+{'site': 5, 'rows': 48000}
+{'site': 6, 'rows': 56324}
+{'site': 7, 'rows': 48000}
+{'site': 8, 'rows': 38400}
+{'site': 9, 'rows': 72000}
+{'site': 10, 'rows': 77760}
+{'site': 11, 'rows': 79008}
+{'site': 12, 'rows': 78240}
+{'site': 13, 'rows': 77184}
+{'site': 14, 'rows': 91200}
+{'site': 15, 'rows': 46748}
+{'site': 16, 'rows': 77522}
+{'site': 17, 'rows': 66009}
+{'site': 18, 'rows': 57346}
+{'site': 19, 'rows': 66029}
+{'site': 20, 'rows': 66027}
+{'site': 21, 'rows': 60258}
+{'site': 22, 'rows': 66022}
+{'site': 23, 'rows': 66019}
+{'site': 24, 'rows': 63122}
+{'site': 25, 'rows': 57315}
+{'site': 26, 'rows': 58522}
+{'site': 27, 'rows': 56195}
+{'site': 28, 'rows': 45832}
+{'site': 29, 'rows': 49539}
+{'site': 30, 'rows': 58368}
+{'site': 31, 'rows': 55200}
+{'site': 32, 'rows': 47904}
+{'site': 33, 'rows': 58272}
+{'site': 34, 'rows': 54912}
+{'site': 35, 'rows': 54240}
+{'site': 36, 'rows': 54912}
+{'site': 37, 'rows': 74592}
+{'site': 38, 'rows': 65952}
+{'site': 39, 'rows': 45792}
+{'site': 40, 'rows': 65952}
+{'site': 41, 'rows': 60192}
+{'site': 42, 'rows': 57312}
+{'site': 43, 'rows': 57312}
+{'site': 44, 'rows': 57312}
+{'site': 45, 'rows': 45792}
+{'site': 46, 'rows': 77952}
+{'site': 47, 'rows': 40416}
+{'site': 48, 'rows': 40608}
+{'site': 49, 'rows': 57312}
+{'site': 50, 'rows': 54432}
+{'site': 51, 'rows': 79104}
+{'site': 52, 'rows': 54432}
+{'site': 53, 'rows': 54432}
+{'site': 54, 'rows': 51552}
+{'site': 55, 'rows': 51552}
+{'site': 56, 'rows': 56160}
+{'site': 57, 'rows': 54528}
+{'site': 58, 'rows': 54432}
+{'site': 59, 'rows': 54432}
+{'site': 60, 'rows': 45792}
+{'site': 61, 'rows': 45792}
+{'site': 62, 'rows': 74208}
+{'site': 63, 'rows': 74496}
+{'site': 64, 'rows': 71712}
+{'site': 65, 'rows': 78336}
+{'site': 66, 'rows': 79008}
+{'site': 67, 'rows': 71712}
+{'site': 68, 'rows': 68832}
+{'site': 69, 'rows': 76992}
+{'site': 70, 'rows': 77135}
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Tuned global LightGBM residual corrector",
+  "feature_contract": "Vendor target forecast, 16 preceding PV values, issue-time forecast-curve summaries and anchor forecasts through 24 hours, target-time seasonal features, and categorical site identity.",
+  "splitting": "Per-site chronological 70/10/20 split. Hyperparameters selected using validation MAE only.",
+  "trials": [
+    {
+      "num_leaves": 63,
+      "min_child_samples": 200,
+      "learning_rate": 0.025,
+      "best_iteration": 4999,
+      "validation_mae_kwh": 30.812977446139953
+    },
+    {
+      "num_leaves": 127,
+      "min_child_samples": 150,
+      "learning_rate": 0.025,
+      "best_iteration": 5000,
+      "validation_mae_kwh": 23.298829932623885
+    },
+    {
+      "num_leaves": 255,
+      "min_child_samples": 100,
+      "learning_rate": 0.02,
+      "best_iteration": 5000,
+      "validation_mae_kwh": 17.65669626028969
+    },
+    {
+      "num_leaves": 127,
+      "min_child_samples": 50,
+      "learning_rate": 0.02,
+      "best_iteration": 5000,
+      "validation_mae_kwh": 24.368249823242387
+    }
+  ],
+  "selected": {
+    "num_leaves": 255,
+    "min_child_samples": 100,
+    "learning_rate": 0.02,
+    "best_iteration": 5000,
+    "validation_mae_kwh": 17.65669626028969
+  },
+  "test": {
+    "rows": 851958,
+    "mae_kwh": 53.87758558895272,
+    "nmae_q995": 0.04371901404499946,
+    "vendor_mae_kwh": 71.17096854832738,
+    "vendor_nmae_q995": 0.060346152667030147,
+    "mae_improvement_pct": 24.298366752774903
+  }
+}

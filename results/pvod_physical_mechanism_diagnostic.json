@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-08-31T15:23:23.635375+00:00",
+  "scope": "Descriptive localisation of the PVOD physical penalty; not causal attribution.",
+  "unavailable_mechanism_variables": [
+    "forecast cloud cover",
+    "aerosol optical depth",
+    "measured plane-of-array irradiance",
+    "verified tilt",
+    "verified azimuth"
+  ],
+  "overall": {
+    "n": 23934,
+    "station_days": 465,
+    "nonphysical_mae": 0.07455693459262668,
+    "physical_mae": 0.08354324637318199,
+    "physical_minus_nonphysical_mae": 0.008986311780555326,
+    "physical_minus_nonphysical_block_interval": {
+      "draws": 2000,
+      "block_days": 7,
+      "estimate": 0.009017150916774018,
+      "lower_95": 0.004966603597295004,
+      "upper_95": 0.012999513883547238
+    },
+    "reference_mae": 0.14386783299140352,
+    "reference_bias": 0.0037331489636800966,
+    "mean_wrf_clear_sky_index": 0.8359706621079375
+  },
+  "by_wrf_irradiance_regime": {
+    "low": {
+      "n": 3285,
+      "station_days": 191,
+      "nonphysical_mae": 0.09653385927823849,
+      "physical_mae": 0.10900421023916564,
+      "physical_minus_nonphysical_mae": 0.012470350960927159,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.007657937864953339,
+        "lower_95": -0.0022302444123423696,
+        "upper_95": 0.017614552379813214
+      },
+      "reference_mae": 0.2291580362415593,
+      "reference_bias": 0.1961007844430372,
+      "mean_wrf_clear_sky_index": 0.1526396605116279
+    },
+    "intermediate": {
+      "n": 3830,
+      "station_days": 303,
+      "nonphysical_mae": 0.10795446541344393,
+      "physical_mae": 0.11402616173395558,
+      "physical_minus_nonphysical_mae": 0.006071696320511659,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.0028358603099660606,
+        "lower_95": -0.004798586675589512,
+        "upper_95": 0.01072059497084762
+      },
+      "reference_mae": 0.16665034642298485,
+      "reference_bias": 0.07827363135528179,
+      "mean_wrf_clear_sky_index": 0.5441528519964945
+    },
+    "high": {
+      "n": 16819,
+      "station_days": 443,
+      "nonphysical_mae": 0.06265927476529062,
+      "physical_mae": 0.07162881435394665,
+      "physical_minus_nonphysical_mae": 0.00896953958865603,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.00721960371285746,
+        "lower_95": 0.0037700435078079826,
+        "upper_95": 0.010717840305326527
+      },
+      "reference_mae": 0.12202138884373019,
+      "reference_bias": -0.0508133597532188,
+      "mean_wrf_clear_sky_index": 1.0358876936181762
+    }
+  },
+  "by_reference_error_regime": {
+    "low": {
+      "n": 7978,
+      "station_days": 465,
+      "nonphysical_mae": 0.04444963909272806,
+      "physical_mae": 0.043506337372708516,
+      "physical_minus_nonphysical_mae": -0.000943301720019543,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": -0.001866791486045732,
+        "lower_95": -0.006077609712146208,
+        "upper_95": 0.00219243063552722
+      },
+      "reference_mae": 0.0177359439832698,
+      "reference_bias": 0.0019205158642996115,
+      "mean_wrf_clear_sky_index": 1.0109751042028738
+    },
+    "intermediate": {
+      "n": 7978,
+      "station_days": 463,
+      "nonphysical_mae": 0.06866709594449157,
+      "physical_mae": 0.07126318533786619,
+      "physical_minus_nonphysical_mae": 0.0025960893933746217,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.0020217151512712337,
+        "lower_95": -0.0028755785798567665,
+        "upper_95": 0.008052350996675495
+      },
+      "reference_mae": 0.0851749808265023,
+      "reference_bias": 0.008373378059543541,
+      "mean_wrf_clear_sky_index": 0.8181947293443417
+    },
+    "high": {
+      "n": 7978,
+      "station_days": 431,
+      "nonphysical_mae": 0.11055406874066036,
+      "physical_mae": 0.13586021640897128,
+      "physical_minus_nonphysical_mae": 0.025306147668310897,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.027212619953233277,
+        "lower_95": 0.022421515424779038,
+        "upper_95": 0.033000014898151304
+      },
+      "reference_mae": 0.32869257416443853,
+      "reference_bias": 0.0009055529671971375,
+      "mean_wrf_clear_sky_index": 0.6787421527765972
+    }
+  },
+  "by_solar_half": {
+    "before_12_UTC": {
+      "n": 20116,
+      "station_days": 458,
+      "nonphysical_mae": 0.0835822249746416,
+      "physical_mae": 0.09285791888201514,
+      "physical_minus_nonphysical_mae": 0.009275693907373523,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.009397272777841146,
+        "lower_95": 0.0047690914954669865,
+        "upper_95": 0.014154982342601513
+      },
+      "reference_mae": 0.16220594825160736,
+      "reference_bias": 0.004107109869843423,
+      "mean_wrf_clear_sky_index": 0.8100100124565123
+    },
+    "from_12_UTC": {
+      "n": 3818,
+      "station_days": 450,
+      "nonphysical_mae": 0.027005142731806184,
+      "physical_mae": 0.034466779063677684,
+      "physical_minus_nonphysical_mae": 0.007461636331871499,
+      "physical_minus_nonphysical_block_interval": {
+        "draws": 2000,
+        "block_days": 7,
+        "estimate": 0.007191293255081391,
+        "lower_95": 0.004167780207133437,
+        "upper_95": 0.010321915269243937
+      },
+      "reference_mae": 0.04724930848269213,
+      "reference_bias": 0.001762851009677617,
+      "mean_wrf_clear_sky_index": 0.9727502399989983
+    }
+  },
+  "daily_spearman_associations": {
+    "penalty_vs_reference_absolute_error": 0.11191369046198207,
+    "penalty_vs_wrf_clear_sky_index": 0.13214838136794818,
+    "station_days": 465
+  }
+}

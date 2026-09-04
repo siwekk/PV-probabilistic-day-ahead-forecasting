@@ -1,0 +1,38 @@
+{
+  "study": "PVOD source-supported day-ahead QGBM study",
+  "restriction": "PVOD records do not expose forecast-run identifiers. This is a source-supported operational convention based on the documented daily 12:00 UTC WRF initialization and 28 to 54 hour forecast range, not a vintage-verified archive.",
+  "n_train": 164926,
+  "n_calibration": 32416,
+  "n_test": 43712,
+  "conformal_radius": 0.06294661617998826,
+  "raw_test": {
+    "mae_median": 0.045249158355762306,
+    "coverage_90": 0.7843155197657394,
+    "width_90": 0.11487782927360635
+  },
+  "calibrated_test": {
+    "mae_median": 0.045249158355762306,
+    "coverage_90": 0.9360358711566618,
+    "width_90": 0.2077997403918455
+  },
+  "features": [
+    "station_code",
+    "hour_sin",
+    "hour_cos",
+    "doy_sin",
+    "doy_cos",
+    "solar_zenith",
+    "clearsky_ghi",
+    "nwp_globalirrad",
+    "nwp_directirrad",
+    "nwp_temperature",
+    "nwp_humidity",
+    "nwp_windspeed",
+    "nwp_winddirection_sin",
+    "nwp_winddirection_cos",
+    "nwp_pressure",
+    "origin_power",
+    "origin_power_lag_4",
+    "origin_power_lag_96"
+  ]
+}

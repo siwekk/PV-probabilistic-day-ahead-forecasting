@@ -1,0 +1,63 @@
+{
+  "study": "PVOD source-supported day-ahead QGBM study",
+  "restriction": "PVOD records do not expose forecast-run identifiers. This is a source-supported operational convention based on the documented daily 12:00 UTC WRF initialization and 28 to 54 hour forecast range, not a vintage-verified archive.",
+  "baselines": {
+    "three_day_persistence": {
+      "n": 44192,
+      "mae_all": 0.07896655990252567,
+      "n_daylight": 24198,
+      "mae_daylight": 0.1437135284236035
+    },
+    "clearsky_scaled_three_day_persistence": {
+      "n": 44192,
+      "mae_all": 0.07930481878143465,
+      "n_daylight": 24198,
+      "mae_daylight": 0.14442811480691595
+    }
+  },
+  "quantile_mlp": {
+    "device": "cuda",
+    "epochs_completed": 26,
+    "best_calibration_pinball": 0.011054232716560364,
+    "n_train": 164926,
+    "n_calibration": 32416,
+    "n_test": 43712,
+    "features": [
+      "station_code",
+      "hour_sin",
+      "hour_cos",
+      "doy_sin",
+      "doy_cos",
+      "solar_zenith",
+      "clearsky_ghi",
+      "nwp_globalirrad",
+      "nwp_directirrad",
+      "nwp_temperature",
+      "nwp_humidity",
+      "nwp_windspeed",
+      "nwp_winddirection_sin",
+      "nwp_winddirection_cos",
+      "nwp_pressure",
+      "origin_power",
+      "origin_power_lag_4",
+      "origin_power_lag_96"
+    ],
+    "conformal_radius": 0.004591556724548251,
+    "raw_test": {
+      "n": 43712,
+      "mae_all": 0.048922386492580586,
+      "n_daylight": 23934,
+      "mae_daylight": 0.08878866831018431,
+      "coverage_90": 0.8038296120058566,
+      "width_90": 0.13381342589855194
+    },
+    "calibrated_test": {
+      "n": 43712,
+      "mae_all": 0.048922386492580586,
+      "n_daylight": 23934,
+      "mae_daylight": 0.08878866831018431,
+      "coverage_90": 0.8811539165446559,
+      "width_90": 0.14070279896259308
+    }
+  }
+}

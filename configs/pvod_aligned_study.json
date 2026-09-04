@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "name": "PVOD aligned NWP covariate study",
+  "frequency": "15min",
+  "temporal_split_utc": {
+    "train_end": "2019-02-28 15:45:00+00:00",
+    "calibration_start": "2019-03-01 00:00:00+00:00",
+    "calibration_end": "2019-04-14 15:45:00+00:00",
+    "test_start": "2019-04-15 00:00:00+00:00"
+  },
+  "feature_sets": {
+    "calendar_solar": ["hour_sin", "hour_cos", "doy_sin", "doy_cos", "solar_zenith", "clearsky_ghi"],
+    "nwp_aligned": ["nwp_globalirrad", "nwp_directirrad", "nwp_temperature", "nwp_humidity", "nwp_windspeed", "nwp_winddirection_sin", "nwp_winddirection_cos", "nwp_pressure"],
+    "lagged_power": ["power_lag_1", "power_lag_4", "power_lag_96"],
+    "lagged_local_measurements": ["lmd_totalirrad_lag_1", "lmd_diffuseirrad_lag_1", "lmd_temperature_lag_1", "lmd_pressure_lag_1", "lmd_windspeed_lag_1", "lmd_winddirection_sin_lag_1", "lmd_winddirection_cos_lag_1"]
+  },
+  "information_sets": {
+    "deterministic": ["calendar_solar"],
+    "aligned_nwp": ["calendar_solar", "nwp_aligned"],
+    "aligned_nwp_with_power_history": ["calendar_solar", "nwp_aligned", "lagged_power"],
+    "aligned_nwp_with_full_history": ["calendar_solar", "nwp_aligned", "lagged_power", "lagged_local_measurements"]
+  },
+  "restriction": "The aligned NWP feature sets are not operational lead-time experiments because NWP issue times are unavailable."
+}

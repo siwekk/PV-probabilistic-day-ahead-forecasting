@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "name": "NREL three-state source-supported day-ahead transfer study",
+  "source_url": "https://www.nlr.gov/grid/solar-power-data",
+  "source_scope": "Synthetic PV power for the 2006 weather year with hourly day-ahead forecasts",
+  "states": {
+    "AZ": {
+      "archive": "az-pv-2006.zip",
+      "fixed_utc_offset_hours": -7
+    },
+    "CO": {
+      "archive": "co-pv-2006.zip",
+      "fixed_utc_offset_hours": -7
+    },
+    "WA": {
+      "archive": "wa-pv-2006.zip",
+      "fixed_utc_offset_hours": -8
+    }
+  },
+  "time_assumption": "LocalTime is interpreted as fixed local standard time. The public source does not expose row-level issue timestamps.",
+  "trajectory_definition": "One hourly DA curve per site and local delivery date",
+  "excluded_product": "HA4 four-hour-ahead forecast",
+  "actual_hourly_aggregation": "Arithmetic mean of twelve five-minute power values",
+  "capacity_clip_upper": 1.2,
+  "daylight_clearsky_ghi_w_m2": 20.0,
+  "known_site_temporal_split": {
+    "train_end": "2006-07-31 23:00",
+    "tuning_start": "2006-08-01 00:00",
+    "tuning_end": "2006-08-31 23:00",
+    "calibration_start": "2006-09-01 00:00",
+    "calibration_end": "2006-10-31 23:00",
+    "test_start": "2006-11-01 00:00"
+  },
+  "complete_site_split": {
+    "method": "SHA256 of site_id with seed 20260828, sorted within state",
+    "train_fraction": 0.70,
+    "calibration_fraction": 0.15,
+    "test_fraction": 0.15
+  },
+  "state_holdout_rotations": [
+    {"test_state": "AZ", "development_states": ["CO", "WA"]},
+    {"test_state": "CO", "development_states": ["AZ", "WA"]},
+    {"test_state": "WA", "development_states": ["AZ", "CO"]}
+  ],
+  "primary_quantiles": [0.05, 0.5, 0.95],
+  "full_quantiles": [0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.975]
+}

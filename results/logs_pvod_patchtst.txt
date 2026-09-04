@@ -1,0 +1,21 @@
+{
+  "study": "PVOD source-supported day-ahead QGBM study",
+  "restriction": "PVOD records do not expose forecast-run identifiers. This is a source-supported operational convention based on the documented daily 12:00 UTC WRF initialization and 28 to 54 hour forecast range, not a vintage-verified archive.",
+  "method": "PatchTST-style model of the issued 24-hour NWP trajectory and origin-power features",
+  "device": "cuda",
+  "sequences": {
+    "train": 1716,
+    "validation": 333,
+    "test": 450
+  },
+  "fit": {
+    "epochs": 54,
+    "validation_mae": 0.04262883961200714
+  },
+  "test": {
+    "mae_all": 0.05275743454694748,
+    "mae_daylight": 0.09516862779855728,
+    "n": 43200,
+    "n_daylight": 23594
+  }
+}

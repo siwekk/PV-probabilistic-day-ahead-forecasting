@@ -1,0 +1,35 @@
+/home/dev/pv-qgbm-coldstart/scripts/run_emsx_tcn.py:79: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return DataLoader(TensorDataset(*(torch.from_numpy(item) for item in values)), batch_size=batch_size, shuffle=shuffle, num_workers=2, pin_memory=True)
+{'epoch': 1, 'validation_mae_norm': 0.05809112977280764}
+{'epoch': 2, 'validation_mae_norm': 0.05705616380449986}
+{'epoch': 3, 'validation_mae_norm': 0.05605055357685905}
+{'epoch': 4, 'validation_mae_norm': 0.05534925993246646}
+{'epoch': 5, 'validation_mae_norm': 0.05477181433870092}
+{'epoch': 6, 'validation_mae_norm': 0.05502814768334311}
+{'epoch': 7, 'validation_mae_norm': 0.05453884183686009}
+{'epoch': 8, 'validation_mae_norm': 0.05428120538360743}
+{'epoch': 9, 'validation_mae_norm': 0.05437645339661318}
+{'epoch': 10, 'validation_mae_norm': 0.05422003703447174}
+{'epoch': 11, 'validation_mae_norm': 0.05393872796389264}
+{'epoch': 12, 'validation_mae_norm': 0.05434841226399625}
+{'epoch': 13, 'validation_mae_norm': 0.05416833960226893}
+{'epoch': 14, 'validation_mae_norm': 0.053870704963620675}
+{'epoch': 15, 'validation_mae_norm': 0.054155606498526604}
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "device": "cuda",
+  "feature_contract": "16 preceding 15-minute observed PV values, vendor forecast, UTC calendar features, and site embedding",
+  "splitting": "Per-site chronological 70/10/20 train/validation/test split.",
+  "fit": {
+    "best_validation_mae_norm": 0.053870704963620675,
+    "train_rows": 2980646,
+    "validation_rows": 425940,
+    "test_rows": 851958
+  },
+  "test": {
+    "mae_kwh": 62.945878125767166,
+    "vendor_mae_kwh": 71.17096854832738,
+    "mae_improvement_pct": 11.556805521025204
+  }
+}

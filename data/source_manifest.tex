@@ -1,0 +1,37 @@
+\section*{Raw-data source manifest}
+
+\noindent Audit date: 26 August 2026. This manifest records the source files inspected before any modeling. The raw archives have not\ been copied into this project. Their current locations are listed to preserve provenance during the audit. A later ingestion step will copy or download only the frozen sources into \texttt{data/raw} and will record file checksums.
+
+\begin{center}
+\begin{tabular}{p{0.18\textwidth}p{0.20\textwidth}p{0.26\textwidth}p{0.27\textwidth}}
+\hline
+Source & Local evidence & Strength for this study & Restriction requiring action \\
+\hline
+UNISOLAR & \texttt{Solar\_Energy\_Generation.csv.zip}, \texttt{Weather\_Data\_reordered\_all.csv.zip}, \texttt{Solar\_Site\_Details.csv} & Forty-two systems across five Australian campuses, 15-minute power and weather data & Capacity is present for only 25 of 42 listed systems. The supplied weather archive does not include irradiance data. \\
+HKUST & \texttt{raw/hkust/Dataset} & Sixty rooftop systems, 5-minute power, rich one-minute weather records, and system metadata & Systems share one campus and one weather station. It supports unseen-system validation, not broad geographic generalization. \\
+SOLETE & \texttt{raw/solete/SOLETE\_Pombo\_*.h5} & Complete PV, irradiance, and weather measurements at several resolutions in Denmark & One 10 kW PV system only. Use as external validation, not a European multi-site cohort. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{UNISOLAR}
+
+The inspected power archive contains 2,731,946 data rows with the columns \texttt{CampusKey}, \texttt{SiteKey}, \texttt{Timestamp}, and \texttt{SolarGeneration}. Its observed archive boundary is from 1 January 2020 to 23 April 2022. The weather archive contains 371,769 rows with apparent temperature, air temperature, dew-point temperature, relative humidity, wind speed, and wind direction. The listed weather coverage has the same boundary. The site table lists 42 sites on five campuses. Coordinates are available for all 42 sites, while nominal capacity and panel description are available for only 25 sites.
+
+The raw power file contains missing target values. The next audit must quantify target completeness by site, establish the power unit, confirm timezone, identify whether capacity can be recovered from a primary source, and determine whether an irradiance file exists outside the supplied archive. Clear-sky normalisation must not rely on an inferred nominal capacity without reporting that choice.
+
+\subsection*{HKUST}
+
+The local package contains 104 PV CSV files and 21 meteorological CSV files. The PV directory has 37 site-level files for systems with panel optimizers, 23 site-level files for systems without panel optimizers, and 44 inverter-level files. The site-level total is therefore 60 systems. The included documentation states that the power data covers 2021--2023 at a five-minute resolution. Weather data cover irradiance, rainfall, relative humidity, sea-level pressure, temperature, visibility, and wind at one-minute resolution.
+
+The metadata are supplied as a Brick-schema Turtle file. The next audit must extract capacity, latitude, longitude, tilt, azimuth, and connection-date fields, determine the timestamp timezone, measure missingness, and inspect whether all systems have comparable coverage. The weather measurements must be treated as contemporaneous observations. They cannot be used as future covariates for an operational forecast unless a matching forecast product is added.
+
+\subsection*{SOLETE}
+
+SOLETE provides 1-second, 1-minute, 5-minute, and hourly HDF5 files for a Danish site from 1 June 2018 to 1 September 2019. The hourly file is available locally. Its documented variables include PV active power, GHI, plane-of-array irradiance, ambient temperature, humidity, pressure, wind speed, wind direction, and solar azimuth and elevation. The nominal PV inverter size is 10 kW.
+
+The next audit must inspect HDF5 column names, timestamp timezone, gaps, night-time behavior, and the distinction between irradiance measurements and averaged or accumulated values. The hourly version will be used initially so that its frequency matches a practical cross-dataset baseline.
+
+\subsection*{Excluded material}
+
+The \texttt{data/archive} directory contains building, gas, water, and electricity-consumption files. These are not PV-generation data and are excluded from this study. Existing \texttt{panel.parquet} and \texttt{static.parquet} files will not be reused until their data lineage can be regenerated from a frozen raw manifest.

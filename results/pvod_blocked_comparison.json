@@ -1,0 +1,26 @@
+{
+  "all": {
+    "n_issue_days": 135,
+    "qgbm_mae": 0.03872867505651356,
+    "mlp_mae": 0.04853845517812331,
+    "mean_mlp_minus_qgbm": 0.009809780121609747,
+    "relative_qgbm_improvement": 0.20210326195200168,
+    "bootstrap_95_ci": [
+      0.007198742306807888,
+      0.01259327695741731
+    ],
+    "p_qgbm_not_better": 0.0
+  },
+  "daylight": {
+    "n_issue_days": 135,
+    "qgbm_mae": 0.08006456692063034,
+    "mlp_mae": 0.10069405018530278,
+    "mean_mlp_minus_qgbm": 0.020629483264672448,
+    "relative_qgbm_improvement": 0.20487291182258463,
+    "bootstrap_95_ci": [
+      0.015051394709064697,
+      0.02663249274673441
+    ],
+    "p_qgbm_not_better": 0.0
+  }
+}

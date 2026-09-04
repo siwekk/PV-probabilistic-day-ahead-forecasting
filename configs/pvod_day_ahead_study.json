@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "name": "PVOD source-supported day-ahead QGBM study",
+  "issue_time_utc": "12:00",
+  "source_forecast_leads_hours": [28, 54],
+  "evaluated_leads_15min": [112, 207],
+  "evaluated_window": "The non-overlapping 28.00 to 51.75 hour interval after each daily 12:00 UTC issue time.",
+  "temporal_split_target_utc": {
+    "train_end": "2019-02-28 15:45:00+00:00",
+    "calibration_start": "2019-03-01 00:00:00+00:00",
+    "calibration_end": "2019-04-14 15:45:00+00:00",
+    "test_start": "2019-04-15 00:00:00+00:00"
+  },
+  "future_features": ["hour_sin", "hour_cos", "doy_sin", "doy_cos", "solar_zenith", "clearsky_ghi", "nwp_globalirrad", "nwp_directirrad", "nwp_temperature", "nwp_humidity", "nwp_windspeed", "nwp_winddirection_sin", "nwp_winddirection_cos", "nwp_pressure"],
+  "origin_features": ["origin_power", "origin_power_lag_4", "origin_power_lag_96"],
+  "restriction": "PVOD records do not expose forecast-run identifiers. This is a source-supported operational convention based on the documented daily 12:00 UTC WRF initialization and 28 to 54 hour forecast range, not a vintage-verified archive."
+}

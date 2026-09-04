@@ -1,0 +1,39 @@
+{'epoch': 1, 'validation_mae_norm': 0.05788425431764478}
+{'epoch': 2, 'validation_mae_norm': 0.0566299658792928}
+{'epoch': 3, 'validation_mae_norm': 0.054918421804275225}
+{'epoch': 4, 'validation_mae_norm': 0.05462772301140428}
+{'epoch': 5, 'validation_mae_norm': 0.053855770863562885}
+{'epoch': 6, 'validation_mae_norm': 0.05340694587443498}
+{'epoch': 7, 'validation_mae_norm': 0.0529561326644474}
+{'epoch': 8, 'validation_mae_norm': 0.052843339247183437}
+{'epoch': 9, 'validation_mae_norm': 0.05196237966656858}
+{'epoch': 10, 'validation_mae_norm': 0.05139273875318413}
+{'epoch': 11, 'validation_mae_norm': 0.05121456672312727}
+{'epoch': 12, 'validation_mae_norm': 0.050827879940852784}
+{'epoch': 13, 'validation_mae_norm': 0.0507759157646406}
+{'epoch': 14, 'validation_mae_norm': 0.050318888038985966}
+{'epoch': 15, 'validation_mae_norm': 0.05046201323424}
+{'epoch': 16, 'validation_mae_norm': 0.050016226998885464}
+{'epoch': 17, 'validation_mae_norm': 0.04971195720151909}
+{'epoch': 18, 'validation_mae_norm': 0.048778422899681026}
+{'epoch': 19, 'validation_mae_norm': 0.04933387934391938}
+{'epoch': 20, 'validation_mae_norm': 0.04864787099820076}
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "device": "cuda",
+  "method": "GRU residual corrector",
+  "feature_contract": "Identical enhanced forecast-curve information set used by tuned QGBM.",
+  "fit": {
+    "best_validation_mae_normalized": 0.04864787099820076,
+    "epochs": 20
+  },
+  "test": {
+    "rows": 851958,
+    "mae_kwh": 63.57510321236551,
+    "nmae_q995": 0.05164327264329459,
+    "vendor_mae_kwh": 71.17096854832738,
+    "vendor_nmae_q995": 0.060346152667030147,
+    "mae_improvement_pct": 10.672701932957441
+  }
+}

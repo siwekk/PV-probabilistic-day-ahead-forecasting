@@ -1,0 +1,47 @@
+{
+  "restriction": "The aligned NWP feature sets are not operational lead-time experiments because NWP issue times are unavailable.",
+  "settings": {
+    "aligned_nwp": {
+      "n_train": 168766,
+      "n_calibration": 33440,
+      "n_test": 44864,
+      "radius": 0.06675398790317733,
+      "raw_test": {
+        "coverage_90": 0.7777505349500713,
+        "width_90": 0.11163181139488551
+      },
+      "calibrated_test": {
+        "coverage_90": 0.9372993937232525,
+        "width_90": 0.20991981962083978
+      }
+    },
+    "aligned_nwp_with_power_history": {
+      "n_train": 167998,
+      "n_calibration": 33440,
+      "n_test": 44864,
+      "radius": 0.008186363108241668,
+      "raw_test": {
+        "coverage_90": 0.8941913338088445,
+        "width_90": 0.0707087804352234
+      },
+      "calibrated_test": {
+        "coverage_90": 0.9338445078459344,
+        "width_90": 0.08323823313528687
+      }
+    },
+    "aligned_nwp_with_full_history": {
+      "n_train": 167998,
+      "n_calibration": 33440,
+      "n_test": 44864,
+      "radius": 0.006576830341878621,
+      "raw_test": {
+        "coverage_90": 0.8955287089871612,
+        "width_90": 0.07496475605502863
+      },
+      "calibrated_test": {
+        "coverage_90": 0.9359843081312411,
+        "width_90": 0.08504966094801228
+      }
+    }
+  }
+}

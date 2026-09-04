@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article and this repository."
+title: "Hard feasibility constraints and soft physical information in probabilistic day-ahead
+photovoltaic forecasting"
+type: software
+authors:
+  - family-names: Siwek
+    given-names: Krzysztof
+    email: krzysztof.siwek@pw.edu.pl
+year: 2026
+license: MIT
+repository-code: "https://github.com/siwekk/PV-probabilistic-day-ahead-forecasting"
+abstract: >-
+  Reproducible programs, configurations, and evaluation routines for a study 
+  of physically constrained global quantile boosting, causal calibration, 
+  geographical stress tests, and time-series foundation models in day-ahead 
+  photovoltaic forecasting.

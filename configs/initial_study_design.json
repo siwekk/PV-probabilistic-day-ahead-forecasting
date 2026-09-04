@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "analysis_frequency": "hourly",
+  "stage_a": {
+    "name": "telemetry-only cross-climate evaluation",
+    "training_source": "HKUST",
+    "external_test_source": "SOLETE",
+    "permitted_features": [
+      "lagged photovoltaic power",
+      "deterministic calendar variables",
+      "solar geometry",
+      "clear-sky power after metadata validation"
+    ],
+    "prohibited_future_features": [
+      "retrospectively observed weather",
+      "reanalysis weather",
+      "unverified forecast weather"
+    ]
+  },
+  "stage_b": {
+    "name": "NWP-supported operational evaluation",
+    "status": "pending PVOD ingestion and forecast-time audit",
+    "required_evidence": [
+      "NWP issue time",
+      "NWP valid time",
+      "timestamp timezone",
+      "radiation field convention",
+      "site-capacity validation"
+    ]
+  },
+  "unisolar": {
+    "role": "supplementary cohort, not core until quality gates pass",
+    "quality_gates": [
+      "target completeness of at least 80 percent",
+      "verified target unit",
+      "capacity or defensible capacity-estimation protocol",
+      "weather missingness treatment documented"
+    ]
+  },
+  "hkust": {
+    "role": "primary multi-system cohort after QC",
+    "quality_gates": [
+      "remove or mask negative power records",
+      "investigate records above 1 MW",
+      "resample the mixed 15-minute and 60-minute site data to hourly",
+      "extract site metadata from the Brick file",
+      "verify timestamp timezone"
+    ]
+  },
+  "solete": {
+    "role": "external Danish test cohort",
+    "quality_gates": [
+      "verify timestamp timezone",
+      "verify PV system configuration for clear-sky modelling"
+    ]
+  }
+}

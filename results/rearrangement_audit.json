@@ -1,0 +1,60 @@
+{
+  "description": "Isolated daylight effect of discrete increasing rearrangement. Score changes are rearranged minus raw.",
+  "generated_from": "Refit with scripts/run_nine_quantile_benchmarks.py on 2026-09-01.",
+  "models": [
+    {
+      "data": "NREL",
+      "method": "lightgbm_nonphysical",
+      "crossing_row_rate_before": 0.42748,
+      "mean_absolute_quantile_displacement": 0.001066,
+      "mean_pinball_change": -0.000075,
+      "crps_9q_change": -0.000155,
+      "pinball_change_by_quantile": {"q05": -0.0000002414, "q10": 0.0000040217, "q20": -0.0001115262, "q30": 0.0000517742, "q50": -0.0001862559, "q70": 0.0000134171, "q80": -0.0002385652, "q90": -0.0000537674, "q95": -0.0001532994}
+    },
+    {
+      "data": "NREL",
+      "method": "lightgbm_physical",
+      "crossing_row_rate_before": 0.39045,
+      "mean_absolute_quantile_displacement": 0.001096,
+      "mean_pinball_change": -0.000075,
+      "crps_9q_change": -0.000194,
+      "pinball_change_by_quantile": {"q05": -0.0000239905, "q10": 0.0000248842, "q20": -0.0001601957, "q30": -0.0001177359, "q50": -0.0002188645, "q70": -0.0000594957, "q80": -0.0000684886, "q90": -0.0000369524, "q95": -0.0000136605}
+    },
+    {
+      "data": "NREL",
+      "method": "xgboost_physical",
+      "crossing_row_rate_before": 0.36939,
+      "mean_absolute_quantile_displacement": 0.001076,
+      "mean_pinball_change": -0.000069,
+      "crps_9q_change": -0.000129,
+      "pinball_change_by_quantile": {"q05": -0.0003857669, "q10": 0.0001471995, "q20": 0.0000048081, "q30": -0.0000864499, "q50": -0.0000564871, "q70": -0.0000245887, "q80": -0.0001132572, "q90": -0.0000579006, "q95": -0.0000449307}
+    },
+    {
+      "data": "PVOD",
+      "method": "lightgbm_nonphysical",
+      "crossing_row_rate_before": 0.75637,
+      "mean_absolute_quantile_displacement": 0.003980,
+      "mean_pinball_change": -0.000274,
+      "crps_9q_change": -0.000572,
+      "pinball_change_by_quantile": {"q05": -0.0004813157, "q10": 0.0000833352, "q20": -0.0004925380, "q30": -0.0001263225, "q50": -0.0001990211, "q70": -0.0005657666, "q80": -0.0004742618, "q90": -0.0002761473, "q95": 0.0000631405}
+    },
+    {
+      "data": "PVOD",
+      "method": "lightgbm_physical",
+      "crossing_row_rate_before": 0.69019,
+      "mean_absolute_quantile_displacement": 0.002471,
+      "mean_pinball_change": -0.000151,
+      "crps_9q_change": -0.000216,
+      "pinball_change_by_quantile": {"q05": -0.0005113208, "q10": -0.0000350932, "q20": -0.0006808602, "q30": 0.0001826327, "q50": 0.0001211479, "q70": -0.0002317942, "q80": -0.0000321093, "q90": -0.0001760573, "q95": 0.0000058302}
+    },
+    {
+      "data": "PVOD",
+      "method": "xgboost_physical",
+      "crossing_row_rate_before": 0.60805,
+      "mean_absolute_quantile_displacement": 0.003332,
+      "mean_pinball_change": -0.000311,
+      "crps_9q_change": -0.000556,
+      "pinball_change_by_quantile": {"q05": -0.0005889344, "q10": -0.0002619687, "q20": -0.0009117900, "q30": 0.0000476516, "q50": -0.0002669321, "q70": -0.0001097339, "q80": -0.0002778159, "q90": -0.0001712958, "q95": -0.0002626255}
+    }
+  ]
+}

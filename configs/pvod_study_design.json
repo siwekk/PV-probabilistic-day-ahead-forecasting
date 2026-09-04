@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "dataset": "PVOD v1.0",
+  "frequency": "15min",
+  "raw_timestamp_timezone": "UTC",
+  "feature_timezone": "Asia/Shanghai",
+  "main_stations": ["station00", "station01", "station02", "station04", "station06", "station07", "station08", "station09"],
+  "excluded_stations": {
+    "station03": "Short coverage, approximately 152 days.",
+    "station05": "Short coverage, approximately 100 days."
+  },
+  "capacity_units": {"metadata": "kW", "power": "MW"},
+  "station04_capacity_rule": {"method": "observed_maximum_times_margin", "margin": 0.05},
+  "duplicate_policy": "Exclude all rows sharing a duplicated station timestamp.",
+  "nwp_radiation_policy": "Retain as supplied. Do not de-accumulate.",
+  "nwp_availability_policy": "Treat as aligned covariates only. Do not claim operational lead-time availability without issue-time metadata.",
+  "local_measurement_policy": "Local measurement variables may be used only as lagged observations or diagnostics, never as future covariates."
+}

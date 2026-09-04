@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "name": "PVOD measured-power Q1 physics ladder",
+  "source_issue_time_utc": "12:00",
+  "source_forecast_leads_hours": [28, 54],
+  "evaluated_leads_15min": [112, 207],
+  "restriction": "PVOD exposes the documented daily WRF schedule but not row-level run identifiers. The experiment is source-supported rather than vintage-verified.",
+  "split": {
+    "train_end": "2019-02-28 15:45:00+00:00",
+    "tuning_start": "2019-03-01 00:00:00+00:00",
+    "tuning_end": "2019-03-20 23:45:00+00:00",
+    "calibration_start": "2019-03-21 00:00:00+00:00",
+    "calibration_end": "2019-04-14 15:45:00+00:00",
+    "test_start": "2019-04-15 00:00:00+00:00"
+  },
+  "quantiles": [0.05, 0.5, 0.95],
+  "daylight_clearsky_ghi_w_m2": 20.0,
+  "seed": 20260828
+}

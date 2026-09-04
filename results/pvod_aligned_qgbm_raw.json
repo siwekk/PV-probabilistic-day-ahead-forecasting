@@ -1,0 +1,141 @@
+{
+  "study": "PVOD aligned NWP covariate study",
+  "restriction": "The aligned NWP feature sets are not operational lead-time experiments because NWP issue times are unavailable.",
+  "station_code_map": {
+    "station00": 0,
+    "station01": 1,
+    "station02": 2,
+    "station04": 3,
+    "station06": 4,
+    "station07": 5,
+    "station08": 6,
+    "station09": 7
+  },
+  "settings": {
+    "deterministic": {
+      "features": [
+        "station_code",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos",
+        "solar_zenith",
+        "clearsky_ghi"
+      ],
+      "n_train": 168766,
+      "n_test": 44864,
+      "test": {
+        "mae_median": 0.06801283393622147,
+        "coverage_90": 0.6745497503566333,
+        "width_90": 0.13230839148169266,
+        "pinball_0.05": 0.010134757943981394,
+        "pinball_0.50": 0.034006416968110735,
+        "pinball_0.95": 0.018427961237549344
+      }
+    },
+    "aligned_nwp": {
+      "features": [
+        "station_code",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos",
+        "solar_zenith",
+        "clearsky_ghi",
+        "nwp_globalirrad",
+        "nwp_directirrad",
+        "nwp_temperature",
+        "nwp_humidity",
+        "nwp_windspeed",
+        "nwp_winddirection_sin",
+        "nwp_winddirection_cos",
+        "nwp_pressure"
+      ],
+      "n_train": 168766,
+      "n_test": 44864,
+      "test": {
+        "mae_median": 0.04526927469834142,
+        "coverage_90": 0.7777505349500713,
+        "width_90": 0.11163181139488551,
+        "pinball_0.05": 0.007247436350776679,
+        "pinball_0.50": 0.02263463734917071,
+        "pinball_0.95": 0.009754567831893839
+      }
+    },
+    "aligned_nwp_with_power_history": {
+      "features": [
+        "station_code",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos",
+        "solar_zenith",
+        "clearsky_ghi",
+        "nwp_globalirrad",
+        "nwp_directirrad",
+        "nwp_temperature",
+        "nwp_humidity",
+        "nwp_windspeed",
+        "nwp_winddirection_sin",
+        "nwp_winddirection_cos",
+        "nwp_pressure",
+        "power_lag_1",
+        "power_lag_4",
+        "power_lag_96"
+      ],
+      "n_train": 167998,
+      "n_test": 44864,
+      "test": {
+        "mae_median": 0.018877374203517098,
+        "coverage_90": 0.8941913338088445,
+        "width_90": 0.0707087804352234,
+        "pinball_0.05": 0.0036963923170360027,
+        "pinball_0.50": 0.009438687101758549,
+        "pinball_0.95": 0.0033351492849597658
+      }
+    },
+    "aligned_nwp_with_full_history": {
+      "features": [
+        "station_code",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos",
+        "solar_zenith",
+        "clearsky_ghi",
+        "nwp_globalirrad",
+        "nwp_directirrad",
+        "nwp_temperature",
+        "nwp_humidity",
+        "nwp_windspeed",
+        "nwp_winddirection_sin",
+        "nwp_winddirection_cos",
+        "nwp_pressure",
+        "power_lag_1",
+        "power_lag_4",
+        "power_lag_96",
+        "lmd_totalirrad_lag_1",
+        "lmd_diffuseirrad_lag_1",
+        "lmd_temperature_lag_1",
+        "lmd_pressure_lag_1",
+        "lmd_windspeed_lag_1",
+        "lmd_winddirection_sin_lag_1",
+        "lmd_winddirection_cos_lag_1"
+      ],
+      "n_train": 167998,
+      "n_test": 44864,
+      "test": {
+        "mae_median": 0.01883564359216718,
+        "coverage_90": 0.8955287089871612,
+        "width_90": 0.07496475605502863,
+        "pinball_0.05": 0.003557073880938867,
+        "pinball_0.50": 0.00941782179608359,
+        "pinball_0.95": 0.003333318566083234
+      }
+    }
+  },
+  "persistence": {
+    "n_test": 44864,
+    "mae": 0.024901423685410637
+  }
+}

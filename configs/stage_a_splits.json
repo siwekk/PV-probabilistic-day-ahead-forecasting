@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "frequency": "hourly",
+  "temporal": {
+    "train_end": "2022-06-30 23:00:00",
+    "calibration_start": "2022-07-01 00:00:00",
+    "calibration_end": "2022-12-31 23:00:00",
+    "test_start": "2023-01-01 00:00:00"
+  },
+  "unseen_site_test_count": 12,
+  "external": {
+    "source": "SOLETE",
+    "target_labels_for_fit_or_calibration": false
+  }
+}
